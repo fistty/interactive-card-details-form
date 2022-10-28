@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 *,
 *::before,
@@ -12,17 +12,104 @@
   font-size: 0.6875rem;
   text-align: center;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
 :root {
-  --DarkBlue: hsl(240, 38%, 20%);
-  --GrayishBlue: hsl(240, 18%, 77%);
+  --Linear-gradient-active-input-border: rgb(100, 72, 254) to
+    rgb(96, 5, 148);
+  --Red-input-errors: rgb(255, 82, 82);
+  --White: rgb(255, 255, 255);
+  --Light-grayish-violet: rgb(222, 221, 223);
+  --Dark-grayish-violet: rgb(142, 133, 147);
+  --Very-dark-violet: rgb(33, 9, 47);
+  --Space-Grotesk: "Space Grotesk", sans-serif;
 }
 
 body {
-  font-size: 2rem;
-  font-family: "Inter", sans-serif;
-  padding-top: 24px;
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
 }
+
+img {
+  display: block;
+}
+
+header {
+  position: relative;
+  height: 240px;
+  background-image: url("./images/bg-main-mobile.png");
+}
+
+.card-container {
+  position: relative;
+  z-index: 9999;
+  top: 0px;
+  height: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.card-front {
+  width: 286px;
+  height: 157px;
+  position: absolute;
+  top: 122.4px;
+  left: 4.27%;
+  background-image: url("./images/bg-card-front.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-shadow: 2px 55px 31px -25px rgb(224 224 224);
+}
+
+.card-front-info {
+  padding-left: 20px;
+  padding-top: 18px;
+  padding-right: 20px;
+}
+
+.logo-container img {
+  width: 55px;
+  height: 30px;
+}
+
+.number-container {
+  margin-top: 32px;
+  color: white;
+  letter-spacing: 2.4px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.last-container {
+  margin-top: 18px;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 0.3px;
+}
+
+.card-back {
+  width: 290px;
+  height: 157px;
+  position: absolute;
+  top: 32px;
+  right: 4.27%;
+}
+
+.card-back-p {
+  position: absolute;
+  right: 39px;
+  top: 68.5px;
+  color: rgb(242 250 253);
+  font-size: 14px;
+}
+
+.card-back img {
+  max-width: 100%;
+}
+
