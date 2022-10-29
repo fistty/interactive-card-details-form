@@ -31,6 +31,7 @@
 body {
   font-size: 18px;
   font-family: "Space Grotesk", sans-serif;
+  padding-bottom: 28px;
 }
 
 img {
@@ -41,6 +42,10 @@ header {
   position: relative;
   height: 240px;
   background-image: url("./images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-size: cover;
 }
 
 .card-container {
