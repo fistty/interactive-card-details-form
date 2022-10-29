@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import cardBack from "../images/bg-card-back.png";
 import logo from "../images/card-logo.svg";
 import "./Header.css";
 
-function Header() {
-  const [cardNumber, setCardNumber] = useState("0000 0000 0000 0000");
+function Header({ cardName, cardNumber, cardMM, cardYY, cardCvc }) {
   return (
     <header>
       <div className="card-container">
         <div className="card-back">
           <img src={cardBack} alt="card's back" />
-          <p className="card-back-p">000</p>
+          <p className="card-back-p">{cardCvc || "000"}</p>
         </div>
         <div className="card-front">
           <div className="card-front-info">
@@ -18,11 +17,13 @@ function Header() {
               <img src={logo} alt="logo" />
             </div>
             <div className="number-container">
-              <p>{cardNumber}</p>
+              <p>{cardNumber || "0000 0000 0000 0000"}</p>
             </div>
             <div className="last-container">
-              <p>JANE APPLESEED</p>
-              <p>00/00</p>
+              <p>{cardName.toUpperCase() || "JANE APPLESEED"}</p>
+              <p>
+                {cardMM || "00"}/{cardYY || "00"}
+              </p>
             </div>
           </div>
         </div>
