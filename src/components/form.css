@@ -14,12 +14,7 @@ input {
   font-family: var(--Space-Grotesk);
 }
 
-input[type="number"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  margin: 0;
-}
+
 
 ::placeholder {
   font-size: 18px;
@@ -32,6 +27,13 @@ input {
   padding-left: 16px;
   border-radius: 7px;
   border: 1px solid rgb(218, 218, 218);
+}
+
+input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 
 input:focus,
