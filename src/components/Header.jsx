@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import cardBack from "../images/bg-card-back.png";
 import logo from "../images/card-logo.svg";
 import "./Header.css";
 
 function Header() {
+  const [cardNumber, setCardNumber] = useState("0000 0000 0000 0000");
   return (
     <header>
       <div className="card-container">
@@ -17,7 +18,7 @@ function Header() {
               <img src={logo} alt="logo" />
             </div>
             <div className="number-container">
-              <p>8888 5555 7777 9999</p>
+              <p>{cardNumber}</p>
             </div>
             <div className="last-container">
               <p>JANE APPLESEED</p>
