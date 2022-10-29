@@ -49,7 +49,6 @@ header {
 
 .card-container {
   position: relative;
-  z-index: 9999;
   top: 0px;
   height: 100%;
   max-width: 420px;
@@ -117,7 +116,113 @@ header {
   max-width: 100%;
 }
 
-@media screen and (min-width: 1200px) {
+.form-container {
+  margin-top: 88px;
+  padding-inline: 24px 23px;
+}
+
+label {
+  color: var(--Very-dark-violet);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+
+input {
+  font-family: var(--Space-Grotesk);
+  height: 45px;
+  padding-left: 16px;
+  border-radius: 7px;
+  border: 1px solid rgb(218, 218, 218);
+  transition: all 200ms ease-out;
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: none;
+}
+
+input:focus,
+input:focus-visible {
+  border: 1px solid transparent;
+  background: linear-gradient(to right, white, white),
+    linear-gradient(to right, rgb(100, 72, 254), rgb(96, 5, 148));
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  outline: none;
+}
+
+::placeholder {
+  font-size: 18px;
+  color: var(--Dark-grayish-violet);
+  font-family: var(--Space-Grotesk);
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.form-container > div:not(:first-child) {
+  margin-top: 22px;
+}
+
+.exp-number-container {
+  display: flex;
+  gap: 8px;
+}
+
+.exp-number-container > input {
+  width: 72px;
+}
+
+.inline-input-container {
+  display: flex;
+  gap: 11px;
+}
+
+button {
+  display: block;
+  margin-top: 28px;
+  width: 100%;
+  background-color: var(--Very-dark-violet);
+  height: 53px;
+  border-radius: 7px;
+  color: white;
+  font-family: var(--Space-Grotesk);
+  font-size: 17px;
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  transition: all 200ms ease-out;
+}
+
+button:hover {
+  border: 2px solid transparent;
+  background-color: white;
+  color: var(--Very-dark-violet);
+  background: linear-gradient(to right, white, white),
+    linear-gradient(to right, rgb(100, 72, 254), rgb(96, 5, 148));
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 1px solid black;
+  background-color: white;
+  color: black;
+}
+
+@media screen and (min-width: 1100px) {
   #root {
     display: flex;
     flex-direction: row;
@@ -137,14 +242,12 @@ header {
 
   .card-container {
     max-width: unset;
-    width: 541px;
+    width: 512px;
     height: 526px;
     display: flex;
     margin: unset;
     top: 50%;
-    /* left: 33%; */
-    /* right: -222px; */
-    right: -34%;
+    right: -27%;
     transform: translateY(-50%);
   }
 
@@ -166,7 +269,7 @@ header {
     padding-right: 33px;
   }
 
-  .logo-container img{
+  .logo-container img {
     width: 84px;
     height: 48px;
   }
@@ -201,5 +304,85 @@ header {
 
   .form-container {
     margin: unset;
+    padding-inline: unset;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  #root {
+    display: flex;
+    flex-direction: row;
+    gap: 349px;
+  }
+
+  header {
+    width: 483px;
+  }
+
+  .card-container {
+    width: 541px;
+    right: -222px;
+  }
+
+  main {
+    width: 381px;
+  }
+
+  .cvc-input-container {
+    width: 100%;
+  }
+
+  .exp-number-container > input {
+    width: 80px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  #root {
+    gap: 24%;
+  }
+
+  header {
+    width: 33.6%;
+    max-width: 730px;
+  }
+
+  .card-container {
+    top: 50%;
+    right: -52%;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  #root {
+    gap: 450px;
+  }
+  .card-container {
+    right: -60%;
+  }
+
+  main {
+    width: 450px;
+  }
+
+  ::placeholder {
+    font-size: 20px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 18px;
+  }
+
+  .exp-input-container {
+    width: 181px;
+  }
+
+  .cvc-input-container {
+    width: 269px;
   }
 }
