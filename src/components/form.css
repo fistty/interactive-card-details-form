@@ -27,6 +27,16 @@ input {
   border: 1px solid rgb(218, 218, 218);
 }
 
+input:focus,
+input:focus-visible {
+  border: 1px solid transparent;
+  background: linear-gradient(to right, white, white),
+    linear-gradient(to right, rgb(100, 72, 254), rgb(96, 5, 148));
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  outline: none;
+}
+
 .flex-container {
   display: flex;
   flex-direction: column;
@@ -58,7 +68,7 @@ input {
 button {
   display: block;
   margin-top: 28px;
-  margin-bottom: 45px;
+  /* margin-bottom: 45px; */
   width: 100%;
   background-color: var(--Very-dark-violet);
   height: 53px;
@@ -66,4 +76,13 @@ button {
   color: white;
   font-family: var(--Space-Grotesk);
   font-size: 17px;
+  border: none;
+  outline: none;
+}
+
+button:focus,
+button:focus-visible {
+outline: 1px solid black;
+background-color: white;
+color: black;
 }
