@@ -18,8 +18,7 @@
 }
 
 :root {
-  --Linear-gradient-active-input-border: rgb(100, 72, 254) to
-    rgb(96, 5, 148);
+  --Linear-gradient-active-input-border: rgb(100, 72, 254) to rgb(96, 5, 148);
   --Red-input-errors: rgb(255, 82, 82);
   --White: rgb(255, 255, 255);
   --Light-grayish-violet: rgb(222, 221, 223);
@@ -119,19 +118,88 @@ header {
 }
 
 @media screen and (min-width: 1200px) {
- #root {
-  display: flex;
-  flex-direction: row;
-  gap: 24%;
- }
+  #root {
+    display: flex;
+    flex-direction: row;
+    gap: 24%;
+  }
 
- header {
-   width: 33.6%;
-   max-width: 730px;
-  height: 100vh;
- }
+  body {
+    padding-bottom: unset;
+  }
 
- .card-back, .card-front {
-  box-shadow: none;
- }
+  header {
+    width: 33.6%;
+    max-width: 730px;
+    height: 100vh;
+    background-image: url("./images/bg-main-desktop.png");
+  }
+
+  .card-container {
+    max-width: unset;
+    width: 541px;
+    height: 526px;
+    display: flex;
+    margin: unset;
+    top: 50%;
+    /* left: 33%; */
+    /* right: -222px; */
+    right: -34%;
+    transform: translateY(-50%);
+  }
+
+  .card-back,
+  .card-front {
+    box-shadow: none;
+    width: 446px;
+    height: 244px;
+  }
+
+  .card-front {
+    top: 0;
+    left: 0;
+  }
+
+  .card-front-info {
+    padding-left: 32px;
+    padding-top: 26px;
+    padding-right: 33px;
+  }
+
+  .logo-container img{
+    width: 84px;
+    height: 48px;
+  }
+  .number-container {
+    margin-top: 55px;
+    font-size: 31px;
+    letter-spacing: 3px;
+  }
+
+  .last-container {
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-top: 25px;
+  }
+
+  .card-back {
+    top: unset;
+    bottom: 0;
+    right: 0;
+  }
+
+  .card-back-p {
+    right: 60px;
+    top: 109px;
+    font-size: 18px;
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+  }
+
+  .form-container {
+    margin: unset;
+  }
 }
