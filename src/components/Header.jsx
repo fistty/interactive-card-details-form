@@ -3,7 +3,7 @@ import cardBack from "../images/bg-card-back.png";
 import logo from "../images/card-logo.svg";
 import "./Header.css";
 
-function Header({ cardName, cardNumber, cardMM, cardYY, cardCvc }) {
+function Header({ cardName, cardInput, cardMM, cardYY, cardCvc }) {
   return (
     <header>
       <div className="card-container">
@@ -17,7 +17,7 @@ function Header({ cardName, cardNumber, cardMM, cardYY, cardCvc }) {
               <img src={logo} alt="logo" />
             </div>
             <div className="number-container">
-              <p>{cardNumber || "0000 0000 0000 0000"}</p>
+              <p>{cardInput || "0000 0000 0000 0000"}</p>
             </div>
             <div className="last-container">
               <p>{cardName.toUpperCase() || "JANE APPLESEED"}</p>
