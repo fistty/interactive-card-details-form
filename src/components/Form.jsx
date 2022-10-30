@@ -2,7 +2,7 @@ import React from "react";
 
 function Form({
   cardName,
-  cardNumber,
+  cardInput,
   cardMM,
   cardYY,
   cardCvc,
@@ -27,12 +27,11 @@ function Form({
       <div className="card-input-container flex-container">
         <label htmlFor="card-number">CARD NUMBER</label>
         <input
-          type="number"
+          type="text"
           id="card-number"
           placeholder="e.g. 1234 5678 9123 0000"
-          value={cardNumber}
+          value={cardInput}
           onChange={handleCardInput}
-          maxLength={16}
         />
       </div>
 
@@ -48,6 +47,9 @@ function Form({
               value={cardMM}
               onChange={handleCardMM}
               max={12}
+              onKeyDown={(evt) =>
+                ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()
+              }
             />
             <input
               type="number"
@@ -57,6 +59,9 @@ function Form({
               value={cardYY}
               onChange={handleCardYY}
               min={21}
+              onKeyDown={(evt) =>
+                ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()
+              }
             />
           </div>
         </div>
@@ -71,6 +76,9 @@ function Form({
             value={cardCvc}
             onChange={handleCardCvc}
             min={21}
+            onKeyDown={(evt) =>
+              ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()
+            }
           />
         </div>
       </div>
