@@ -11,20 +11,22 @@ function App() {
   const [cardCvc, setcardCvc] = useState("");
 
   const handleCardInput = (e) => {
-    if (e.target.value.length > e.target.maxLength) {
-      e.target.value = e.target.value.slice(0, e.target.maxLength);
+    if (e.target.value.length > 20) {
+      e.target.value = e.target.value.slice(0, 20);
     }
 
+    e.target.value = e.target.value.replace(/\D/g, "");
     const rawText = [...e.target.value.split(" ").join("")]; // Remove old space
-    const creditCard = []; // Create card as array
+    const newNumber = []; // Create card as array
     rawText.forEach((t, i) => {
-      if (i % 4 === 0) creditCard.push(" "); // Add space
-      creditCard.push(t);
+      if (i % 4 === 0) {
+        newNumber.push(" "); // Add space
+      }
+      newNumber.push(t);
     });
-    creditCard.join("");
-    // 
-    setCardInput(creditCard);
-    // Transform card array to string
+    newNumber.join(""); // Transform card array to string
+    setCardInput(newNumber.join(""));
+
     // setCardInput(e.target.value);
   };
 
@@ -36,6 +38,8 @@ function App() {
     if (e.target.value.length > e.target.maxLength) {
       e.target.value = e.target.value.slice(0, e.target.maxLength);
     }
+    e.target.value = e.target.value.replace(/\D/g, "");
+
     setCardMM(e.target.value);
   };
 
@@ -43,6 +47,8 @@ function App() {
     if (e.target.value.length > e.target.maxLength) {
       e.target.value = e.target.value.slice(0, e.target.maxLength);
     }
+    e.target.value = e.target.value.replace(/\D/g, "");
+
     setCardYY(e.target.value);
   };
 
@@ -50,6 +56,8 @@ function App() {
     if (e.target.value.length > e.target.maxLength) {
       e.target.value = e.target.value.slice(0, e.target.maxLength);
     }
+    e.target.value = e.target.value.replace(/\D/g, "");
+
     setcardCvc(e.target.value);
   };
 
@@ -57,7 +65,7 @@ function App() {
     <>
       <Header
         cardName={cardName}
-        cardNumber={cardInput}
+        cardInput={cardInput}
         cardMM={cardMM}
         cardYY={cardYY}
         cardCvc={cardCvc}
