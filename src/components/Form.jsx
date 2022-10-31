@@ -11,15 +11,20 @@ function Form({
   handleCardMM,
   handleCardYY,
   handleCardCvc,
+  handleSubmit,
 }) {
   const preventKey = (e) => {
-    console.log(e.keyCode);
     if (["e", "E", "+", "-"].includes(e.key)) {
       e.preventDefault();
     }
+    const parentElement = e.target.parentElement;
+    const errorElement = parentElement.querySelector(".error");
+    console.log(parentElement);
+    console.log(errorElement);
+    errorElement.style.display = "none"
   };
   return (
-    <form className="form-container">
+    <form className="form-container" onSubmit={handleSubmit}>
       <div className="name-input-container flex-container">
         <label htmlFor="name">CARDHOLDER NAME</label>
         <input
@@ -28,17 +33,23 @@ function Form({
           placeholder="e.g. Jane Appleseed"
           value={cardName}
           onChange={handleNameInput}
+          onKeyDown={preventKey}
         />
+        <div className="error"></div>
       </div>
       <div className="card-input-container flex-container">
         <label htmlFor="card-number">CARD NUMBER</label>
         <input
-          type="text"
+          type="tel"
+          inputMode="numeric"
+          autoComplete="cc-number"
           id="card-number"
           placeholder="e.g. 1234 5678 9123 0000"
           value={cardInput}
           onChange={handleCardInput}
+          onKeyDown={preventKey}
         />
+        <div className="error"></div>
       </div>
 
       <div className="inline-input-container">
@@ -55,6 +66,7 @@ function Form({
               max={12}
               onKeyDown={preventKey}
             />
+
             <input
               type="number"
               id="YY"
@@ -66,6 +78,7 @@ function Form({
               onKeyDown={preventKey}
             />
           </div>
+          <div className="error"></div>
         </div>
 
         <div className="cvc-input-container inline-container flex-container">
@@ -80,6 +93,7 @@ function Form({
             min={21}
             onKeyDown={preventKey}
           />
+          <div className="error"></div>
         </div>
       </div>
 
