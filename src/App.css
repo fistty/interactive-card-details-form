@@ -176,10 +176,18 @@ input:focus-visible {
   margin-top: 22px;
 }
 
+.exp-input-container {
+  width: 152px;
+}
+
+.cvc-input-container {
+  width: calc(100% - 163px);
+}
+
 .exp-number-container {
   display: flex;
   gap: 8px;
-}
+} 
 
 .exp-number-container > input {
   width: 72px;
