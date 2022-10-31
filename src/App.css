@@ -37,6 +37,13 @@ img {
   display: block;
 }
 
+.error {
+  font-size: 13px;
+  color: var(--Red-input-errors);
+  font-weight: 500;
+  display: none;
+}
+
 header {
   position: relative;
   height: 240px;
@@ -178,6 +185,7 @@ input:focus-visible {
 
 .exp-input-container {
   width: 152px;
+  position: relative;
 }
 
 .cvc-input-container {
@@ -187,7 +195,7 @@ input:focus-visible {
 .exp-number-container {
   display: flex;
   gap: 8px;
-} 
+}
 
 .exp-number-container > input {
   width: 72px;
@@ -345,6 +353,7 @@ button:focus-visible {
   .exp-input-container {
     width: unset;
   }
+
   .exp-number-container > input {
     width: 80px;
   }
