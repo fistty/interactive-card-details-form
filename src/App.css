@@ -342,6 +342,9 @@ button:focus-visible {
     width: 202px;
   }
 
+  .exp-input-container {
+    width: unset;
+  }
   .exp-number-container > input {
     width: 80px;
   }
