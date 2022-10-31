@@ -4,8 +4,8 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [cardInput, setCardInput] = useState("");
   const [cardName, setCardName] = useState("");
+  const [cardInput, setCardInput] = useState("");
   const [cardMM, setCardMM] = useState("");
   const [cardYY, setCardYY] = useState("");
   const [cardCvc, setcardCvc] = useState("");
@@ -59,6 +59,43 @@ function App() {
     setcardCvc(e.target.value);
   };
 
+  const setError = (parent) => {
+    const parentElement = parent;
+    const errorElement = parentElement.querySelector(".error");
+    errorElement.innerText = "Can't be blank";
+    errorElement.style.display = "block";
+  };
+
+  const handleSubmit = (e) => {
+    const parentElement = document.querySelector(".name-input-container");
+    if (cardName.match(/^\s*$/)) {
+      setError(parentElement);
+    }
+
+    if (cardInput.match(/^\s*$/)) {
+      const parentElement = document.querySelector(".card-input-container");
+      setError(parentElement);
+    }
+
+    if (cardCvc.match(/^\s*$/)) {
+      console.log(cardCvc);
+      const parentElement = document.querySelector(".cvc-input-container");
+      setError(parentElement, "Can't be blank");
+    }
+
+    if (cardMM.match(/^\s*$/)) {
+      const parentElement = document.querySelector(".exp-input-container");
+      setError(parentElement, "Can't be blank");
+    }
+
+    if (cardYY.match(/^\s*$/)) {
+      const parentElement = document.querySelector(".cvc-input-container");
+      setError(parentElement, "Can't be blank");
+    }
+
+    e.preventDefault();
+  };
+
   return (
     <>
       <Header
@@ -80,6 +117,7 @@ function App() {
           handleCardMM={handleCardMM}
           handleCardYY={handleCardYY}
           handleCardCvc={handleCardCvc}
+          handleSubmit={handleSubmit}
         />
       </main>
     </>
