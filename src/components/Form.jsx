@@ -12,6 +12,12 @@ function Form({
   handleCardYY,
   handleCardCvc,
 }) {
+  const preventKey = (e) => {
+    console.log(e.keyCode);
+    if (["e", "E", "+", "-"].includes(e.key)) {
+      e.preventDefault();
+    }
+  };
   return (
     <form className="form-container">
       <div className="name-input-container flex-container">
@@ -47,9 +53,7 @@ function Form({
               value={cardMM}
               onChange={handleCardMM}
               max={12}
-              onKeyDown={(evt) =>
-                ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()
-              }
+              onKeyDown={preventKey}
             />
             <input
               type="number"
@@ -59,9 +63,7 @@ function Form({
               value={cardYY}
               onChange={handleCardYY}
               min={21}
-              onKeyDown={(evt) =>
-                ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()
-              }
+              onKeyDown={preventKey}
             />
           </div>
         </div>
@@ -76,9 +78,7 @@ function Form({
             value={cardCvc}
             onChange={handleCardCvc}
             min={21}
-            onKeyDown={(evt) =>
-              ["e", "E", "+", "-"].includes(evt.key) && evt.preventDefault()
-            }
+            onKeyDown={preventKey}
           />
         </div>
       </div>
