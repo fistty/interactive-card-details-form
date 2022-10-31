@@ -26,8 +26,6 @@ function App() {
     });
     newNumber.join(""); // Transform card array to string
     setCardInput(newNumber.join(""));
-
-    // setCardInput(e.target.value);
   };
 
   const handleNameInput = (e) => {
