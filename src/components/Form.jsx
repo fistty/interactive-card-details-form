@@ -19,9 +19,24 @@ function Form({
     }
     const parentElement = e.target.parentElement;
     const errorElement = parentElement.querySelector(".error");
-    console.log(parentElement);
-    console.log(errorElement);
-    errorElement.style.display = "none"
+    if (errorElement === null) {
+      const newParentElement = parentElement.parentElement;
+      console.log(newParentElement);
+      const newErrorElement = newParentElement.querySelector(".error");
+      newErrorElement.style.display = "none";
+
+      const inputElement = parentElement.querySelectorAll("input");
+      console.log(inputElement);
+      inputElement.forEach((input) => {
+        input.classList.remove("red-border");
+      });
+
+      return;
+    }
+    errorElement.style.display = "none";
+    const inputElement = parentElement.querySelector("input");
+    console.log(inputElement);
+    inputElement.classList.remove("red-border");
   };
   return (
     <form className="form-container" onSubmit={handleSubmit}>
@@ -38,12 +53,12 @@ function Form({
         <div className="error"></div>
       </div>
       <div className="card-input-container flex-container">
-        <label htmlFor="card-number">CARD NUMBER</label>
+        <label htmlFor="card-input">CARD NUMBER</label>
         <input
           type="tel"
           inputMode="numeric"
           autoComplete="cc-number"
-          id="card-number"
+          id="card-input"
           placeholder="e.g. 1234 5678 9123 0000"
           value={cardInput}
           onChange={handleCardInput}
@@ -63,7 +78,6 @@ function Form({
               placeholder="MM"
               value={cardMM}
               onChange={handleCardMM}
-              max={12}
               onKeyDown={preventKey}
             />
 
@@ -74,7 +88,6 @@ function Form({
               placeholder="YY"
               value={cardYY}
               onChange={handleCardYY}
-              min={21}
               onKeyDown={preventKey}
             />
           </div>
@@ -90,7 +103,6 @@ function Form({
             placeholder="e.g. 123"
             value={cardCvc}
             onChange={handleCardCvc}
-            min={21}
             onKeyDown={preventKey}
           />
           <div className="error"></div>
