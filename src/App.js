@@ -9,6 +9,7 @@ function App() {
   const [cardMM, setCardMM] = useState("");
   const [cardYY, setCardYY] = useState("");
   const [cardCvc, setcardCvc] = useState("");
+  const [isError, setIsError] = useState(true);
 
   const handleCardInput = (e) => {
     if (e.target.value.length > 20) {
@@ -59,38 +60,60 @@ function App() {
     setcardCvc(e.target.value);
   };
 
-  const setError = (parent) => {
+  const setError = (parent, message, id) => {
     const parentElement = parent;
     const errorElement = parentElement.querySelector(".error");
-    errorElement.innerText = "Can't be blank";
+    const inputElement = parentElement.querySelector("input");
+
+    if (id) {
+      errorElement.innerText = message;
+      errorElement.style.display = "block";
+      const idElement = parentElement.querySelector("#" + id);
+      idElement.classList.add("red-border");
+      console.log([idElement]);
+      return;
+    }
+    errorElement.innerText = message;
     errorElement.style.display = "block";
+    inputElement.classList.add("red-border");
   };
 
   const handleSubmit = (e) => {
-    const parentElement = document.querySelector(".name-input-container");
     if (cardName.match(/^\s*$/)) {
-      setError(parentElement);
+      const parentElement = document.querySelector(".name-input-container");
+      setError(parentElement, "Can't be blank");
     }
 
     if (cardInput.match(/^\s*$/)) {
       const parentElement = document.querySelector(".card-input-container");
-      setError(parentElement);
-    }
-
-    if (cardCvc.match(/^\s*$/)) {
-      console.log(cardCvc);
-      const parentElement = document.querySelector(".cvc-input-container");
       setError(parentElement, "Can't be blank");
+    } else if (cardInput.length < 20) {
+      const parentElement = document.querySelector(".card-input-container");
+      setError(parentElement, "Must be up to 16 digits");
     }
 
     if (cardMM.match(/^\s*$/)) {
       const parentElement = document.querySelector(".exp-input-container");
-      setError(parentElement, "Can't be blank");
+      setError(parentElement, "Can't be blank", "MM");
+    } else if (cardMM < 1 || cardMM > 12) {
+      const parentElement = document.querySelector(".exp-input-container");
+      setError(parentElement, "Invalid Month", "MM");
     }
 
     if (cardYY.match(/^\s*$/)) {
+      const parentElement = document.querySelector(".exp-input-container");
+      setError(parentElement, "Can't be blankk", "YY");
+    } else if (cardYY < 22) {
+      const parentElement = document.querySelector(".exp-input-container");
+      setError(parentElement, "Must be this year or above", "YY");
+    }
+
+    if (cardCvc.match(/^\s*$/)) {
       const parentElement = document.querySelector(".cvc-input-container");
       setError(parentElement, "Can't be blank");
+    } else if (cardCvc.length < 3) {
+      const parentElement = document.querySelector(".cvc-input-container");
+      setError(parentElement, "CVC must be up to 3 digits");
     }
 
     e.preventDefault();
