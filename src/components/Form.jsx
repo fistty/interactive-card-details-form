@@ -21,12 +21,12 @@ function Form({
     const errorElement = parentElement.querySelector(".error");
     if (errorElement === null) {
       const newParentElement = parentElement.parentElement;
-      console.log(newParentElement);
+
       const newErrorElement = newParentElement.querySelector(".error");
       newErrorElement.style.display = "none";
 
       const inputElement = parentElement.querySelectorAll("input");
-      console.log(inputElement);
+
       inputElement.forEach((input) => {
         input.classList.remove("red-border");
       });
@@ -35,7 +35,6 @@ function Form({
     }
     errorElement.style.display = "none";
     const inputElement = parentElement.querySelector("input");
-    console.log(inputElement);
     inputElement.classList.remove("red-border");
   };
   return (
