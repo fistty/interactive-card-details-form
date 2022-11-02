@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Frontend Solution](https://www.frontendmentor.io/solutions/notifications-page-double-click-function-3t4DbQ0J7L)
-- Live Site URL: [Netlify Live Site](https://fistty-time-tracking-dashboard.netlify.app/)
+- Live Site URL: [Netlify Live Site](https://fistty-interactive-card-details.netlify.app/)
 
 ## My process
 
