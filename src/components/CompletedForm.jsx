@@ -5,7 +5,7 @@ function CompletedForm({ handleIsCompleted }) {
   return (
     <div>
       <div className="completed-image-container">
-        <img className="c-image" src={iconComplete} alt="completed icon" />
+        <img src={iconComplete} alt="completed icon" />
       </div>
       <div className="completed-text-container">
         <p>THANK YOU!</p>
