@@ -1,7 +1,6 @@
 import React from "react";
 import cardBack from "../images/bg-card-back.png";
 import logo from "../images/card-logo.svg";
-import "./Header.css";
 
 function Header({ cardName, cardInput, cardMM, cardYY, cardCvc }) {
   return (
