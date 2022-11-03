@@ -248,10 +248,27 @@ button:focus-visible {
 
 .completed-image-container {
   margin-top: 91px;
+  height: 80px;
 }
 
 .completed-image-container > img {
   margin: 0 auto;
+  transform: translateY(-40px);
+  animation: ball forwards ease-in-out 0.5s 100ms;
+}
+
+@keyframes ball {
+  0% {
+    transform: translateY(-40px);
+  }
+
+  70% {
+    transform: translateY(30px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .completed-text-container {
