@@ -14,7 +14,7 @@ function Form({
   handleSubmit,
 }) {
   const preventKey = (e) => {
-    if (["e", "E", "+", "-"].includes(e.key)) {
+    if (!(e.target.id === "name") && ["e", "E", "+", "-"].includes(e.key)) {
       e.preventDefault();
     }
     const parentElement = e.target.parentElement;
