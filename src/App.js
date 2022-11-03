@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Form from "./components/Form";
 import CompletedForm from "./components/CompletedForm";
 import "./App.css";
+import { handleSlice } from "./handleSlice";
 
 function App() {
   const [cardName, setCardName] = useState("");
@@ -11,7 +12,7 @@ function App() {
   const [cardYY, setCardYY] = useState("");
   const [cardCvc, setcardCvc] = useState("");
   const [isFormError, setIsFormError] = useState([false]);
-  const [isCompleted, setIsCompleted] = useState(false);
+  const [isFormCompleted, setIsFormCompleted] = useState(false);
 
   const handleIsFormError = () => {
     setIsFormError((prev) => {
@@ -19,19 +20,20 @@ function App() {
       newCopy.push(false);
       return newCopy;
     });
-    console.log(isFormError);
   };
 
   const handleIsCompleted = () => {
-    setIsCompleted(false);
+    setIsFormCompleted(false);
+    setCardName("");
+    setCardInput("");
+    setCardMM("");
+    setCardYY("");
+    setcardCvc("");
   };
 
   const handleCardInput = (e) => {
-    if (e.target.value.length > 20) {
-      e.target.value = e.target.value.slice(0, 20);
-    }
+    handleSlice(e, 20);
 
-    e.target.value = e.target.value.replace(/\D/g, "");
     const rawText = [...e.target.value]; // Remove old space
     // const rawText = [...e.target.value.split(" ").join("")]; // Remove old space
     const newNumber = []; // Create card as array
@@ -50,29 +52,17 @@ function App() {
   };
 
   const handleCardMM = (e) => {
-    if (e.target.value.length > e.target.maxLength) {
-      e.target.value = e.target.value.slice(0, e.target.maxLength);
-    }
-    e.target.value = e.target.value.replace(/\D/g, "");
-
+    handleSlice(e);
     setCardMM(e.target.value);
   };
 
   const handleCardYY = (e) => {
-    if (e.target.value.length > e.target.maxLength) {
-      e.target.value = e.target.value.slice(0, e.target.maxLength);
-    }
-    e.target.value = e.target.value.replace(/\D/g, "");
-
+    handleSlice(e);
     setCardYY(e.target.value);
   };
 
   const handleCardCvc = (e) => {
-    if (e.target.value.length > e.target.maxLength) {
-      e.target.value = e.target.value.slice(0, e.target.maxLength);
-    }
-    e.target.value = e.target.value.replace(/\D/g, "");
-
+    handleSlice(e);
     setcardCvc(e.target.value);
   };
 
@@ -145,7 +135,7 @@ function App() {
 
   useEffect(() => {
     if (isFormError.indexOf(false) < 0) {
-      setIsCompleted(true);
+      setIsFormCompleted(true);
     }
   }, [isFormError]);
 
@@ -157,8 +147,9 @@ function App() {
         cardMM={cardMM}
         cardYY={cardYY}
         cardCvc={cardCvc}
+        isFormCompleted={isFormCompleted}
       />
-      {!isCompleted && (
+      {!isFormCompleted && (
         <main>
           <Form
             cardName={cardName}
@@ -175,7 +166,7 @@ function App() {
           />
         </main>
       )}
-      {isCompleted && (
+      {isFormCompleted && (
         <main>
           <CompletedForm handleIsCompleted={handleIsCompleted} />
         </main>
