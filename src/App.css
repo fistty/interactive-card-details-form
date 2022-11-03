@@ -249,21 +249,36 @@ button:focus-visible {
 .completed-image-container {
   margin-top: 91px;
   height: 80px;
+  animation: ballBrightness 3s ease-out 1300ms infinite;
+}
+
+@keyframes ballBrightness {
+  0% {
+    filter: brightness(100%);
+  }
+
+  50% {
+    filter: brightness(140%);
+  }
+
+  100% {
+    filter: brightness(100%);
+  }
 }
 
 .completed-image-container > img {
   margin: 0 auto;
   transform: translateY(-40px);
-  animation: ball forwards ease-in-out 0.5s 100ms;
+  animation: ballMovement forwards ease-in-out 1s 300ms;
 }
 
-@keyframes ball {
+@keyframes ballMovement {
   0% {
     transform: translateY(-40px);
   }
 
   70% {
-    transform: translateY(30px);
+    transform: translateY(23px);
   }
 
   100% {
