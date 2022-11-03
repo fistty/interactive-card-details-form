@@ -71,7 +71,7 @@ function Form({
           <label htmlFor="MM">EXP. DATE (MM/YY)</label>
           <div className="exp-number-container">
             <input
-              type="number"
+              type="tel"
               id="MM"
               maxLength={2}
               placeholder="MM"
@@ -81,7 +81,7 @@ function Form({
             />
 
             <input
-              type="number"
+              type="tel"
               id="YY"
               maxLength={2}
               placeholder="YY"
@@ -96,7 +96,7 @@ function Form({
         <div className="cvc-input-container inline-container flex-container">
           <label htmlFor="cvc">CVC</label>
           <input
-            type="number"
+            type="tel"
             id="cvc"
             maxLength={3}
             placeholder="e.g. 123"
