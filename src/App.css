@@ -151,6 +151,7 @@ input {
   transition: all 200ms ease-out;
   cursor: pointer;
   font-size: 17px;
+  appearance: none;
 }
 
 input::-webkit-outer-spin-button,
