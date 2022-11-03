@@ -34,11 +34,10 @@ Users should be able to:
 
 ### Built with
 
-- Semantic HTML5 markup
+- [React](https://reactjs.org/) - JS library
 - CSS custom properties
 - Mobile-first workflow
 - Flexbox
-- [React](https://reactjs.org/) - JS library
 
 ## Author
 
