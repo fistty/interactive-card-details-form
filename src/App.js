@@ -52,17 +52,17 @@ function App() {
   };
 
   const handleCardMM = (e) => {
-    handleSlice(e);
+    handleSlice(e, 2);
     setCardMM(e.target.value);
   };
 
   const handleCardYY = (e) => {
-    handleSlice(e);
+    handleSlice(e, 2);
     setCardYY(e.target.value);
   };
 
   const handleCardCvc = (e) => {
-    handleSlice(e);
+    handleSlice(e, 3);
     setcardCvc(e.target.value);
   };
 
