@@ -55,7 +55,6 @@ function Form({
         <label htmlFor="card-input">CARD NUMBER</label>
         <input
           type="tel"
-          inputMode="numeric"
           id="card-input"
           placeholder="e.g. 1234 5678 9123 0000"
           value={cardInput}
