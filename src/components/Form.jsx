@@ -56,7 +56,6 @@ function Form({
         <input
           type="tel"
           inputMode="numeric"
-          autoComplete="cc-number"
           id="card-input"
           placeholder="e.g. 1234 5678 9123 0000"
           value={cardInput}
