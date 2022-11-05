@@ -71,7 +71,7 @@ function Form({
             <input
               type="tel"
               id="MM"
-              maxLength={2}
+              // maxLength={2}
               placeholder="MM"
               value={cardMM}
               onChange={handleCardMM}
@@ -81,7 +81,7 @@ function Form({
             <input
               type="tel"
               id="YY"
-              maxLength={2}
+              // maxLength={2}
               placeholder="YY"
               value={cardYY}
               onChange={handleCardYY}
@@ -96,7 +96,7 @@ function Form({
           <input
             type="tel"
             id="cvc"
-            maxLength={3}
+            // maxLength={3}
             placeholder="e.g. 123"
             value={cardCvc}
             onChange={handleCardCvc}
