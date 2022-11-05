@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Solution](https://www.frontendmentor.io/solutions/notifications-page-double-click-function-3t4DbQ0J7L)
+- Solution URL: [Frontend Solution](https://www.frontendmentor.io/solutions/interactive-card-details-form-eE6BolW-9E)
 - Live Site URL: [Netlify Live Site](https://fistty-interactive-card-details.netlify.app/)
 
 ## My process
