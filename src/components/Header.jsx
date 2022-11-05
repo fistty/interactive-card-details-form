@@ -7,7 +7,9 @@ function Header({ cardName, cardInput, cardMM, cardYY, cardCvc }) {
     <header>
       <div className="card-container">
         <div className="card-back">
-          <img src={cardBack} alt="card's back" />
+          <h1>
+            <img src={cardBack} alt="card's back" />
+          </h1>
           <p className="card-back-p">{cardCvc || "000"}</p>
         </div>
         <div className="card-front">
