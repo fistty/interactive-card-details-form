@@ -23,3 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 interactive-card-details-form-main
 interactive-card-details-form-main.zip
+*.psd
